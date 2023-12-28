@@ -1,0 +1,394 @@
+main {
+    position: relative;
+    overflow: hidden;
+}
+
+#calendarBox {
+    background-color : white;
+    height: auto;
+    min-height: 900px;
+    width: 945px;
+    margin: 0px;
+    padding: 20px;
+    /* margin: 0 auto; */
+    border-right: 1px solid lightgray;
+    box-shadow:0px 40px 30px -20px rgba(0,0,0,0.3);
+}
+
+/* td {
+    width: 140px;
+    height: 100px;
+    background-color: #F5F5DC;
+} */
+
+.Calendar {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Calendar>thead>tr:first-child  {
+    height: 80px;
+}
+
+.Calendar>thead>tr:first-child>td {
+    font-family: 'NanumSquareNeoTTF-Variable';
+    font-size: 22px;
+    font-weight: bold;   
+}
+
+.Calendar>thead>tr:nth-child(2)>td {
+    font-family: 'NanumSquareNeoTTF-cBd';
+    background-color: #FFB000;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.Calendar>thead>tr:nth-child(2)>td:nth-of-type(1)>p:nth-of-type(1),
+.Calendar>thead>tr:nth-child(2)>td:nth-of-type(2)>p:nth-of-type(1),
+.Calendar>thead>tr:nth-child(2)>td:nth-of-type(3)>p:nth-of-type(1)   {
+    font-size: 20px;
+    font-weight: bold;   
+    margin-bottom: 5px;
+}
+
+#totalPrice,
+#expense,
+#income {
+    font-size: 16px;
+}
+
+.Calendar>thead>tr:nth-child(3)>td {
+    font-family: 'NanumSquareNeoTTF-cBd';
+    font-weight: 600;
+    font-size: 20px;
+
+    width: 130px;
+    height: 50px;
+    background-color: #FFCF9D;
+
+    position: relative;
+}
+
+.Calendar>tbody>tr>td {
+    position: relative;
+    width: 130px;
+    height: 100px;
+    background-color: #F5F5DC;
+    /* background-color: #FFCF9D; */
+}
+
+.Calendar>tbody>tr>td>p:nth-of-type(1) {
+    font-family: 'NanumSquareNeoTTF-cBd';
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transition-duration: .2s;
+    line-height: 30px;
+    margin: 5px;
+    /* margin: 0 auto; */
+    margin-bottom: 5px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    text-align: center;
+}
+
+.Calendar>tbody>tr>td>p:nth-of-type(2) {
+    font-family: 'NanumSquareNeoTTF-bRg';
+    height: 15px;
+    width: 80px;
+    font-size: 11px;
+    transition-duration: .2s;
+    line-height: 15px;
+    text-align: right;
+    position: absolute;
+    bottom: 45px;
+    right: 10px;
+
+    display: inline-block;
+    color: black;
+}
+
+/* .pastDay {
+    color: gray;
+} */
+
+.today {
+    background-color: #F5D042;
+    color: #fff;
+    font-weight: 600;
+}
+
+.pastDay,
+.futureDay,
+.today {
+    cursor: pointer;
+}
+
+.pastDay:hover,
+.today:hover,
+.futureDay:hover {
+    background:#0A174E;
+    color: white;
+}
+
+.choiceDay {
+    background: #0A174E;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#datePrice {
+    margin-top: 50px;
+    /* padding: 20px 0; */
+    /* box-sizing: border-box; */
+}
+
+#saturday {
+    color: skyblue;
+}
+
+#sunday {
+    color: red;
+}
+
+#datePrice {
+    display: flex;
+    flex-direction: column;
+}
+
+#datePrice input {
+    width: 120px;
+    margin: 5px 0;
+}
+
+#datePrice div {
+    padding: 0;
+}
+
+/* ***************************************** */
+/* **************** slideBox *************** */
+/* ***************************************** */
+
+#slideBox {
+    width: 300px;
+    height: 900px;
+    min-height: 940px;
+    
+    padding: 0 10px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#slideLogo {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 13px;
+    position: relative;
+}
+
+/* #slideLogo>img:nth-of-type(1) {
+    width: 80px;
+    height: 80px;
+
+    position: absolute;
+    top: 20px;
+    left: 70px;
+} */
+
+#slideLogo>img:nth-of-type(1) {
+    width: 60px;
+    height: 60px;
+
+    position: absolute;
+    top: 40px;
+    left: 110px;
+}
+
+#slideContents {
+    width: 100%;
+    height: 760px;
+    /* font-family: 'NanumSquareNeoTTF-bRg'; */
+    /* border-radius: 5px; */
+    /* border: 2px solid #F5F5DC; */
+    background-color: #F5F5DC;
+}
+
+#buttonBox {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+}
+
+label[for="incomeChk"],
+label[for="expenseChk"] {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    font-family: 'NanumSquareNeoTTF-bRg';
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    color: black;
+    margin: 0px 5px;
+
+    border-radius: 10px;
+    /* background-color: #004225; */
+    border: 2px solid #004225;
+    box-sizing: border-box;
+
+    cursor: pointer;
+}
+
+/* 클릭된 상태의 글자색 설정 */
+#incomeChk:checked + #incomeChkLabel,
+#expenseChk:checked + #expenseChkLabel {
+    background-color: #004225;
+    /* border: none; */
+    color: white;
+}
+
+#incomeChk,
+#expenseChk {
+    position: absolute;
+    top: 0;
+    left: -999999px;
+}
+
+input[type='date'] {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    font-family: 'NanumSquareNeoTTF-cBd';
+    
+    border: 1px solid;
+    border-radius: 5px;
+    
+    position: relative;
+    
+    background: url(../img/calendar_icon.png) no-repeat right 10px center /
+    20px auto; 
+    background-color: white;
+}
+
+/* 실제 캘린더 아이콘을 클릭하는 영역을 의미하는 선택자
+/* 이 영역을 확장해서 input의 어떤 곳을 클릭해도 캘린더를 클릭한 것과 같은 효과를 만들자! */
+input[type='date']::-webkit-calendar-picker-indicator {
+    position: absolute; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent; 
+    color: transparent; 
+    cursor: pointer;
+} 
+
+/* ***************************************** */
+/* form 태그 안의 Box 속성 */
+/* ***************************************** */
+#assetBox,
+#typeBox,
+#amountBox,
+#explainBox {
+    padding: 0 20px;
+    margin-top: 20px;
+    
+    font-family: 'NanumSquareNeoTTF-bRg';
+}
+
+#dateBox {
+    padding: 0 20px;
+    margin-top: 10px;
+
+    font-family: 'NanumSquareNeoTTF-bRg';
+}
+
+/* ***************************************** */
+/* 드롭다운 메뉴 속성 */
+/* ***************************************** */
+.optionSize {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    font-family: 'NanumSquareNeoTTF-cBd';
+    
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+/* ***************************************** */
+/* 금액, 내용 속성 */
+/* ***************************************** */
+
+#amount {
+    width: 90%;
+    height: 40px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    font-family: 'NanumSquareNeoTTF-cBd';
+    
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+#explain {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    font-family: 'NanumSquareNeoTTF-cBd';
+    
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+button[id="save"] {
+    width: calc(100% - 40px);
+    height: 40px;
+    font-family: 'NanumSquareNeoTTF-bRg';
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    color: white;
+
+    margin-top: 30px;
+    margin-left: 20px;
+
+    border-radius: 10px;
+    background-color: #FFB000;
+    border: none;
+
+    cursor: pointer;
+}
+
+button[id="memo"] {
+    width: calc(100% - 40px);
+    height: 40px;
+    font-family: 'NanumSquareNeoTTF-bRg';
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    color: white;
+
+    margin-top: 30px;
+    margin-left: 20px;
+
+    border-radius: 10px;
+    background-color: #004225;
+    border: none;
+
+    cursor: pointer;
+}

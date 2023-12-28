@@ -1,0 +1,63 @@
+.heightSet {
+    height: 100vh;
+}
+
+#pandaHome {
+    width: 600px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(0, -50%);
+    border-radius: 10px;
+}
+
+#homeTxt {
+    width: 300px;
+    height: auto;
+
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    transform: translate(0, -90%);
+}
+
+#homeTxt>img {
+    width: 100%;
+    height: 100%;
+}
+
+#loginJoinBox {
+    position: absolute;
+    top: 58%;
+    left: 60%;
+    /*transform: translate(0, -100%);*/
+    display: flex;
+}
+
+#homeLogin,
+#homeJoin {
+    width: 200px;
+    height: 60px;
+    font-family: 'NanumSquareNeoTTF-cBd';
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    background-color: #004225;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+#homeLogin {
+    margin-right: 20px;
+}
+
+#homeLogin:hover,
+#homeJoin:hover {
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}

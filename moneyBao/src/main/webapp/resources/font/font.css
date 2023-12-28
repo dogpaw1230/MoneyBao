@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SOYOMapleBoldTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TheJamsil5Thin';
+    src: url('./The_Jamsil_OTF/Thin.otf') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TheJamsil5Light';
+    src: url('./The_Jamsil_OTF/Light.otf')  format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TheJamsil5Regular';
+    src: url('./The_Jamsil_OTF/Regular.otf')  format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TheJamsil5Medium';
+    src: url('./The_Jamsil_OTF/Medium.otf')  format('woff2');
+    src: format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('./The_Jamsil_OTF/Bold.otf')  format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TheJamsil5ExtraBold';
+    src: url('./The_Jamsil_OTF/ExtraBold.otf')  format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* 나눔스퀘어네오 */
+
+@font-face {
+    font-family: 'NanumSquareNeoTTF-aLt';
+    src: url('./NanumSquareNeo/NanumSquareNeoTTF-aLt.woff')  format('woff2');
+    /* font-weight: 800; */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoTTF-bRg';
+    src: url('./NanumSquareNeo/NanumSquareNeoTTF-bRg.woff')  format('woff2');
+    /* font-weight: 800; */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoTTF-cBd';
+    src: url('./NanumSquareNeo/NanumSquareNeoTTF-cBd.woff')  format('woff2');
+    /* font-weight: 800; */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoTTF-dEb';
+    src: url('./NanumSquareNeo/NanumSquareNeoTTF-dEb.woff')  format('woff2');
+    /* font-weight: 800; */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoTTF-eHv';
+    src: url('./NanumSquareNeo/NanumSquareNeoTTF-eHv.woff')  format('woff2');
+    /* font-weight: 800; */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoTTF-Variable';
+    src: url('./NanumSquareNeo/NanumSquareNeo-Variable.woff')  format('woff2');
+    /* font-weight: 800; */
+    font-style: normal;
+}
+
+
