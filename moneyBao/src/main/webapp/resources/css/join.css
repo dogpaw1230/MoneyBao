@@ -144,7 +144,8 @@
     border-radius: 10px;
 
     font-family: 'NanumSquareNeoTTF-bRg';
-    padding: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
 }
 
 #emailAuth {
@@ -213,4 +214,16 @@
 #authNumberBox {
     display: none;
 }
+
+#pwError,
+#pwChkError,
+#nameChk {
+    font-family: 'NanumSquareNeoTTF-bRg';
+    font-size: 14px;
+    color: red;
+
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
 

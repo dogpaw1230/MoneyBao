@@ -87,18 +87,21 @@
                 <label for="pw">비밀번호</label>
                 <br>
                 <input type="password" id="pw" name="userPw" placeholder="영문, 숫자, 특수문자를 포함한 8자 이상" minlength="7" autocomplete="off">
+                <p id="pwError"></p>
             </div>
 
             <div id="pwChkBox">
                 <label for="pwChk">비밀번호 확인</label>
                 <br>
                 <input type="password" id="pwChk" name="userPwChk" placeholder="비밀번호 확인" autocomplete="off">
+                <p id="pwChkError"></p>
             </div>
 
             <div id="nameBox">
                 <label for="userName">닉네임</label>
                 <br>
                 <input type="text" id="userName" name="userName" placeholder="별명(2~15자)" autocomplete="off">
+                <p id="nameChk"></p>
             </div>
 
             <button type="submit" id="joinBtn">회원가입하기</button>

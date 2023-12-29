@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bitstudy.app.dao.userMapper">
+
+    <!--id 에 해당하는 정보 모두 조회하기-->
+    <select id="selectOne" parameterType="String" resultType="UserDto">
+        select * from user
+        where userId = #{id}
+    </select>
+
+    <!--아이디 중복 체크 -->
+    <select id="checkId" parameterType="String" resultType="int">
+        select count(*) from user where userId=#{id}
+    </select>
+
+
+    <!-- 모든 정보 넣어 회원가입 -->
+    <insert id="insert" parameterType="UserDto">
+        insert into user
+        (userId,userPw,userName,userGender,userBirth,userPhoneNo,userEmail)
+        values
+        (#{userId},#{userPw},#{userName},#{userGender}
+        ,#{userBirth},#{userPhoneNo},#{userEmail}
+        )
+    </insert>
+
+    <!--id에 해당하는 회원정보 모두수정 -->
+    <update id="updateAll" parameterType="UserDto" >
+        update user
+        set
+        userPw=#{userPw}
+        ,userPhoneNo=#{userPhoneNo}
+        ,userEmail=#{userEmail}
+        where userId=#{userId}
+    </update>
+
+    <!-- id에 해당하는 생년월일만 바꾸기 -->
+    <update id="update_Birth" parameterType="UserDto">
+    update user set userBirth=#{userBirth} where userId=#{userId}
+    </update>
+
+    <!-- id에 해당하는 비밀번호 변경-->
+    <update id="update_Pw" parameterType="UserDto">
+        update user set userPw=#{userPw} where userId=#{userId}
+    </update>
+
+    <!-- id에 해당하는 휴대폰번호 변경-->
+    <update id="update_Phone" parameterType="UserDto">
+        update user set userPhoneNo=#{userPhoneNo} where userId=#{userId}
+    </update>
+
+
+    <!-- id 에 해당하는 정보삭제(회원탈퇴) -->
+    <delete id="deleteOne" parameterType="String">
+        delete from user where userId = #{id}
+    </delete>
+
+
+    <!-- 아이디 찾기 (이름과 이메일로)-->
+    <select id="findMemberId" parameterType="UserDto" resultType="UserDto">
+        select * from user
+        where userName=#{userName} and userEmail=#{userEmail}
+    </select>
+
+
+    <!-- 비밀번호 찾기  -->
+    <select id="pwdCheck" parameterType="UserDto" resultType="Integer">
+        select
+        count(*) from user
+        where userId=#{userId} and userName=#{userName}
+        and
+        userEmail=#{userEmail}
+
+    </select>
+
+    <!--새로운 비밀번호 저장하는 쿼리문 -->
+    <update id="pwdUpdate" parameterType="UserDto">
+        update user
+        set
+        userPw=#{userPw}
+        where
+        userId=#{userId} and userName=#{userName} and userEmail=#{userEmail}
+    </update>
+
+    <!-- 시험용 -->
+    <select id="allselect" resultType="UserDto">
+        select * from user limit 4
+    </select>
+
+    <!--정보 모두 조회하기-->
+    <select id="selectAll" resultType="UserDto" parameterType="int">
+        SELECT * FROM user
+        ORDER BY userNo DESC
+    </select>
+
+
+
+</mapper>
