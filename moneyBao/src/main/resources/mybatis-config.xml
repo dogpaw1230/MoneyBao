@@ -6,9 +6,9 @@
 <configuration>
 
     <typeAliases>
-        <!-- 별칭 정하는곳: 앞으로 sampleDto 라고 하면 com.bitstudy.app.sampleDto 로 알아들음 -->
+        <!-- 별칭 정하는곳: 앞으로 sampleDto 라고 하면 com.moneyBao.app.*Dto 로 알아들음 -->
 
-<!--        <typeAlias alias="sampleDto" type="com.moneyBao.app.domain.sampleDto" />-->
+        <typeAlias alias="UserDto" type="com.moneyBao.app.domain.UserDto" />
 
     </typeAliases>
 </configuration>

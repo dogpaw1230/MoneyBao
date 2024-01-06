@@ -39,8 +39,8 @@
     position: relative;
 }
 
-input[name="id"],
-input[name="pwd"] {
+input[name="userId"],
+input[name="userPw"] {
     width: 300px;
     height: 40px;
     font-size: 20px;

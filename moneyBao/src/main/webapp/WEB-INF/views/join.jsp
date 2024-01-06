@@ -64,12 +64,11 @@
             </ul>
         </div>
 
-        <form action="#" method="GET" id="joinForm">
-
+        <form action="<c:url value='/join/join'/>" method="POST" id="joinForm">
             <div id="idBox">
-                <label for="id">이메일</label>
+                <label for="joinUserId">이메일</label>
                 <br>
-                <input type="email" id="id" name="userId" placeholder="이메일 주소 입력" maxlength="50" autocomplete="off" required>
+                <input type="email" id="joinUserId" name="userId" placeholder="이메일 주소 입력" maxlength="50" autocomplete="off" required>
                 <button type="button" id="emailAuth">이메일 인증하기</button>
             </div>
 
@@ -84,16 +83,16 @@
             </div>
 
             <div id="pwBox">
-                <label for="pw">비밀번호</label>
+                <label for="joinUserPw">비밀번호</label>
                 <br>
-                <input type="password" id="pw" name="userPw" placeholder="영문, 숫자, 특수문자를 포함한 8자 이상" minlength="7" autocomplete="off">
+                <input type="password" id="joinUserPw" name="userPw" placeholder="영문, 숫자, 특수문자를 포함한 8자 이상" minlength="7" autocomplete="off">
                 <p id="pwError"></p>
             </div>
 
             <div id="pwChkBox">
                 <label for="pwChk">비밀번호 확인</label>
                 <br>
-                <input type="password" id="pwChk" name="userPwChk" placeholder="비밀번호 확인" autocomplete="off">
+                <input type="password" id="pwChk" placeholder="비밀번호 확인" autocomplete="off">
                 <p id="pwChkError"></p>
             </div>
 
@@ -104,7 +103,7 @@
                 <p id="nameChk"></p>
             </div>
 
-            <button type="submit" id="joinBtn">회원가입하기</button>
+            <button type="button" id="joinBtn">회원가입하기</button>
         </form>
 
         <div class="have_id">

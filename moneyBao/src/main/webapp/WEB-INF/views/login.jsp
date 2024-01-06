@@ -47,12 +47,12 @@
 
         <div class="login_input">
             <form action="<c:url value='/login/login'/>" id="loginForm" method="post">
-                <input type="text" name="id" placeholder="이메일 주소를 입력하세요" autocomplete="off">
-                <input type="password" name="pwd" placeholder="비밀번호를 입력하세요" autocomplete="off">
+                <input type="email" name="userId" id="id" placeholder="이메일 주소를 입력하세요" autocomplete="off" value="${cookie.MoneyBaoId.value}">
+                <input type="password" name="userPw" id="pwd" placeholder="비밀번호를 입력하세요" autocomplete="off">
 
                 <div class="login_keep">
-                    <input type="checkbox" name="login_keep">
-                    <p>로그인 상태 유지</p>
+                    <input type="checkbox" name="rememberId" ${empty cookie.MoneyBaoId.value?"":"checked"}>
+                    <p>아이디 기억하기</p>
                 </div>
 
                 <button type="submit">로그인</button>
@@ -88,4 +88,6 @@
 </div>
 
 </body>
+<script src="<c:url value='/js/login.js'/>"></script>
+
 </html>

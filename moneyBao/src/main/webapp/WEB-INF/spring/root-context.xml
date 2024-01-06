@@ -20,8 +20,8 @@
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-<!--		<property name="configLocation"  value="classpath:mybatis-config.xml"/> &lt;!&ndash; mybatis 설정파일 위치 (main > resource 폴더)&ndash;&gt;-->
-<!--		<property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/> &lt;!&ndash;sql 담긴 파일들 위치랑 이름 패턴 지정한 파일&ndash;&gt;-->
+		<property name="configLocation"  value="classpath:mybatis-config.xml"/> <!-- mybatis 설정파일 위치 (main > resource 폴더)-->
+		<property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/> <!--sql 담긴 파일들 위치랑 이름 패턴 지정한 파일-->
 	</bean>
 
 	<!-- 파일 업로드를 위한 MutipartResolver 구현체 CommonsMultipartResolver  bean 등록 -->

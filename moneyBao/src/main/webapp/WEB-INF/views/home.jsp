@@ -34,5 +34,4 @@
 	</div>
 </div>
 </body>
-<script src="<c:url value='/js/home.js'/>"></script>
 </html>
