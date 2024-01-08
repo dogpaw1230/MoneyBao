@@ -64,7 +64,7 @@
             </ul>
         </div>
 
-        <form action="<c:url value='/join/join'/>" method="POST" id="joinForm">
+        <form action="<c:url value='/join/join'/>" method="post" id="joinForm">
             <div id="idBox">
                 <label for="joinUserId">이메일</label>
                 <br>
@@ -79,6 +79,7 @@
                     <p id="authTime">02:30</p>
                     <button type="button" id="authBtn">확인</button>
                 </div>
+                <p id="incorrectCode"></p>
 
             </div>
 

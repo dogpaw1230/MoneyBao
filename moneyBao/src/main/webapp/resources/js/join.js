@@ -6,7 +6,14 @@ document.addEventListener('DOMContentLoaded', function () {
     let myJoinForm = document.getElementById('joinForm');
 
     let emailInput = document.getElementById('joinUserId');
-    let submitButton = document.getElementById('emailAuth');
+    let authCodeBox = document.getElementById('authNumberBox')
+    let emailAuthButton = document.getElementById('emailAuth');
+    let authCodeButton = document.getElementById('authBtn');
+    let authCodeInput = document.getElementById('authNumber');
+    let authCodeValue;
+    let incorrectCode = document.getElementById('incorrectCode');
+    let authCodeBool = true;
+
     let passwordInput = document.getElementById('joinUserPw');
     let passwordError = document.getElementById('pwError');
     let passwordChk = document.getElementById('pwChk');
@@ -21,7 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
     emailInput.addEventListener('input', validateEmail);
 
     // 이메일 인증하기 버튼 클릭 이벤트 리스너 추가
-    submitButton.addEventListener('click', submitForm);
+    emailAuthButton.addEventListener('click', emailAuth);
+
+    // 인증번호 입력 후 확인 버튼 클릭 리스너 추가
+    authCodeButton.addEventListener('click', authCodeChk);
 
     // 1. 비밀번호 입력 이벤트 리스너 등록
     passwordInput.addEventListener('input', handlePasswordInput);
@@ -62,17 +72,53 @@ document.addEventListener('DOMContentLoaded', function () {
     function validateEmail() {
         // 이메일 주소의 유효성을 확인
         if (/^\S+@\S+\.\S+$/.test(emailInput.value)) {
-            submitButton.classList.add('active');
-            submitButton.removeAttribute('disabled');
+            emailAuthButton.classList.add('active');
+            emailAuthButton.removeAttribute('disabled');
         } else {
-            submitButton.classList.remove('active');
-            submitButton.setAttribute('disabled', 'disabled');
+            emailAuthButton.classList.remove('active');
+            emailAuthButton.setAttribute('disabled', 'disabled');
         }
     }
 
-    function submitForm() {
-        alert('이메일 주소가 유효합니다: ' + emailInput.value);
-        // 여기에서 실제로 폼을 제출하거나 다른 동작을 수행할 수 있습니다.
+    // 이메일 인증하기 버튼 누르면 인증 번호 누르는 요소 나타나기
+    function emailAuth() {
+        authCodeBox.style.display = 'block';
+        $.ajax({
+            url: './emailchk',
+            type: 'post',
+            data: { email : emailInput.value},
+            success: function (authCode) {
+                authCodeValue = authCode;
+                console.log("인증번호 전송 성공");
+                emailAuthButton.classList.remove('active');
+                emailAuthButton.setAttribute('disabled', 'disabled');
+            },
+            error: function () {
+                alert("에러입니다");
+            }
+        });
+
+    }
+    function authCodeLength() {
+        authCodeInput.addEventListener('input', function () {
+            incorrectCode.textContent= '';
+        })
+    }
+
+    authCodeLength();
+
+    function authCodeChk() {
+        incorrectCode.textContent= '';
+        let authCode = authCodeInput.value;
+
+        if (authCode !== authCodeValue) {
+            incorrectCode.textContent = '올바른 인증 코드가 아닙니다';
+            return authCodeBool = false;
+        } else {
+            authCodeBool = true;
+            incorrectCode.textContent = "인증이 완료되었습니다."
+            incorrectCode.style.color = 'blue';
+        }
     }
 
     // 비밀번호 확인 이벤트 리스너 함수
@@ -87,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let userName = $('#userName').val();
         $.ajax({
             url: './usernamechk',
-            type: 'post',
+            type: 'get',
             data: { userName: userName },
             success: function (cnt) {
                 // 중복 시 폼 제출 버튼 비활성화
@@ -122,6 +168,8 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("비밀번호를 확인해주세요.");
         } else if (!userNameValid) {
             alert("닉네임을 확인해주세요.");
+        } else if (!authCodeBool) {
+            alert("인증번호를 확인해주세요.")
         } else {
             alert("회원가입 완료");
             myJoinForm.submit();

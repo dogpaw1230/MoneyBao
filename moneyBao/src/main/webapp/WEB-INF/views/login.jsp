@@ -46,7 +46,7 @@
         </div>
 
         <div class="login_input">
-            <form action="<c:url value='/login/login'/>" id="loginForm" method="post">
+            <form action="<c:url value='/login/login'/>" id="loginForm" method="POST">
                 <input type="email" name="userId" id="id" placeholder="이메일 주소를 입력하세요" autocomplete="off" value="${cookie.MoneyBaoId.value}">
                 <input type="password" name="userPw" id="pwd" placeholder="비밀번호를 입력하세요" autocomplete="off">
 
